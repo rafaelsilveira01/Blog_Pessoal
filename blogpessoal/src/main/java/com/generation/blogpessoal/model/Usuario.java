@@ -41,7 +41,7 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuraio")
 	private List<Postagem> postagem;
-
+	
 	public Long getId() {
 		return id;
 	}

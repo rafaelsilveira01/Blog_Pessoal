@@ -8,6 +8,7 @@ public class UsuarioLogin {
 	private String foto;
 	private String senha;
 	private String token;
+	
 	public Long getId() {
 		return id;
 	}

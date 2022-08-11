@@ -12,9 +12,32 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * Classe BasicSecurityConfig
+ * 
+ * Esta classe é responsável por habilitar a segurança básica da aplicação e o login
+ * na aplicação.
+ * 
+ * Para habilitar a segurança HTTP no Spring, precisamos extender (herdar) 
+ * a Classe WebSecurityConfigurerAdapter para fornecer uma configuração padrão 
+ * no método configure (HttpSecurity http)
+ * 
+ * A configuração padrão garante que qualquer requisição enviada para a API 
+ * seja autenticada com login baseado em formulário ou autenticação via Browser.
+ * 
+ * Para personalizar a autenticação utilizaremos a sobrecarga dos métodos da
+ * Classe WebSecurityConfigurerAdapter
+ * 
+ */
+
+/**
+ *  A annotation @EnableWebSecurity: habilita a configuração de segurança padrão 
+ *  do Spring Security na nossa api.
+ */
 @SuppressWarnings("deprecation")
 @EnableWebSecurity
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
+
 	/**
 	 * A annotation @Autowired insere uma Injeção de Dependência. 
 	 * 
@@ -148,6 +171,3 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 			
 	}
 }
-
-	
-
