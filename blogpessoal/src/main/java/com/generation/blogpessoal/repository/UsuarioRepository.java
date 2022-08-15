@@ -10,10 +10,12 @@ import org.springframework.stereotype.Repository;
 import com.generation.blogpessoal.model.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
-	
-	 public List<Usuario> findAllByUsuarioContainingIgnoreCase(@Param("usuario") String usuario);
-	
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+
+	public List<Usuario> findAllByUsuarioContainingIgnoreCase(@Param("usuario") String usuario);
+
+	public List<Usuario> findAllByNomeContainingIgnoreCase(String nome);
+
 	public Optional<Usuario> findByUsuario(String userName);
 
 }
